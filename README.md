@@ -60,10 +60,33 @@ D7 = X Y Z
 
 
 ### PROGRAM 
+```
+ENCODER
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+DECODER
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a & ~b & ~c);
+assign d1=(~a & ~b & c);
+assign d2=(~a & b & ~c);
+assign d3=(~a & b & c);
+assign d4=(a & ~b & ~c);
+assign d5=(a & ~b & c);
+assign d6=(a & b & ~c);
+assign d7=(a & b & c);
+endmodule
+```
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: J.MOHAMED YAHYA
+RegisterNumber:212222050037  
 */
 
 
@@ -72,7 +95,9 @@ RegisterNumber:
 
 
 ### RTL LOGIC  
+![WhatsApp Image 2023-06-07 at 14 11 33](https://github.com/mohammadyahya10/Experiment-08-Encoders-and-decoders-/assets/130548526/98757aef-ace0-44a8-9cdd-16cc82a22cb0)
 
+![decoderrtl](https://github.com/mohammadyahya10/Experiment-08-Encoders-and-decoders-/assets/130548526/6a6abb8b-c86d-4144-9328-d0afc2a1acf3)
 
 
 
@@ -81,12 +106,16 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+![WhatsApp Image 2023-06-07 at 14 11 34](https://github.com/mohammadyahya10/Experiment-08-Encoders-and-decoders-/assets/130548526/a1ccfd9c-d70a-4e82-bd2e-03abf87bd18e)
+![decoder td](https://github.com/mohammadyahya10/Experiment-08-Encoders-and-decoders-/assets/130548526/22c3202e-5a76-44e5-a506-6d258d48748e)
 
 
 
 
 
 ### TRUTH TABLE 
+![WhatsApp Image 2023-06-07 at 14 35 56](https://github.com/mohammadyahya10/Experiment-08-Encoders-and-decoders-/assets/130548526/c2ac3ae6-f3fe-4b7d-a069-3b3c1988546d)
+![WhatsApp Image 2023-06-07 at 14 35 55](https://github.com/mohammadyahya10/Experiment-08-Encoders-and-decoders-/assets/130548526/b1aa6007-5851-43bc-8970-859bd7f90980)
 
 
 
@@ -94,3 +123,4 @@ RegisterNumber:
 
 
 ### RESULTS 
+the encoders and decoders are verified
